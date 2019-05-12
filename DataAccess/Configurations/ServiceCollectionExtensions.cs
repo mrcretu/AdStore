@@ -12,6 +12,7 @@ namespace DataAccess.Configurations
         {
             services.AddDbContext<ApplicationContext>(options => options.UseSqlServer(connectionString));
             services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IPostRepository, PostRepository>();
         }
     }
 }

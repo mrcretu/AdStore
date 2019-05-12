@@ -9,6 +9,7 @@ namespace BussinessLogic.Configurations
         public static void AddBusiness(this IServiceCollection services)
         {
             services.AddScoped<IUserLogic, UserLogic>();
+            services.AddScoped<IPostLogic, PostLogic>();
         }
     }
 }
