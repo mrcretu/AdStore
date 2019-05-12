@@ -17,7 +17,14 @@ namespace Service.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            var users = _userLogic.GetAll();
+            
+            return View(users);
+        }
+
+        public IActionResult CreateUser()
+        {
+            return CreateUser();
         }
 
         [AllowAnonymous]

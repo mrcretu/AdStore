@@ -14,7 +14,7 @@ using System.Text;
 
 namespace BussinessLogic.Implementations
 {
-    public class UserLogic : ILogic<User>
+    public class UserLogic : IUserLogic
     {
         private IUserRepository _userRepository;
         private readonly AppSettings _appSettings;
