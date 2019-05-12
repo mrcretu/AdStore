@@ -1,0 +1,28 @@
+C:\Users\Marius Cretu\Desktop\.NET homework_4\homework4\BussinessLogic\bin\Debug\netcoreapp2.1\BussinessLogic.deps.json
+C:\Users\Marius Cretu\Desktop\.NET homework_4\homework4\BussinessLogic\bin\Debug\netcoreapp2.1\BussinessLogic.dll
+C:\Users\Marius Cretu\Desktop\.NET homework_4\homework4\BussinessLogic\bin\Debug\netcoreapp2.1\BussinessLogic.pdb
+C:\Users\Marius Cretu\Desktop\.NET homework_4\homework4\BussinessLogic\bin\Debug\netcoreapp2.1\DataAccess.dll
+C:\Users\Marius Cretu\Desktop\.NET homework_4\homework4\BussinessLogic\bin\Debug\netcoreapp2.1\Entities.dll
+C:\Users\Marius Cretu\Desktop\.NET homework_4\homework4\BussinessLogic\bin\Debug\netcoreapp2.1\DataAccess.pdb
+C:\Users\Marius Cretu\Desktop\.NET homework_4\homework4\BussinessLogic\bin\Debug\netcoreapp2.1\Entities.pdb
+C:\Users\Marius Cretu\Desktop\.NET homework_4\homework4\BussinessLogic\obj\Debug\netcoreapp2.1\BussinessLogic.csprojAssemblyReference.cache
+C:\Users\Marius Cretu\Desktop\.NET homework_4\homework4\BussinessLogic\obj\Debug\netcoreapp2.1\BussinessLogic.csproj.CoreCompileInputs.cache
+C:\Users\Marius Cretu\Desktop\.NET homework_4\homework4\BussinessLogic\obj\Debug\netcoreapp2.1\BussinessLogic.AssemblyInfoInputs.cache
+C:\Users\Marius Cretu\Desktop\.NET homework_4\homework4\BussinessLogic\obj\Debug\netcoreapp2.1\BussinessLogic.AssemblyInfo.cs
+C:\Users\Marius Cretu\Desktop\.NET homework_4\homework4\BussinessLogic\obj\Debug\netcoreapp2.1\BussinessLogic.csproj.CopyComplete
+C:\Users\Marius Cretu\Desktop\.NET homework_4\homework4\BussinessLogic\obj\Debug\netcoreapp2.1\BussinessLogic.dll
+C:\Users\Marius Cretu\Desktop\.NET homework_4\homework4\BussinessLogic\obj\Debug\netcoreapp2.1\BussinessLogic.pdb
+C:\Users\Marius Cretu\Desktop\AdStore\AdStore\BussinessLogic\bin\Debug\netcoreapp2.1\BussinessLogic.deps.json
+C:\Users\Marius Cretu\Desktop\AdStore\AdStore\BussinessLogic\bin\Debug\netcoreapp2.1\BussinessLogic.dll
+C:\Users\Marius Cretu\Desktop\AdStore\AdStore\BussinessLogic\bin\Debug\netcoreapp2.1\BussinessLogic.pdb
+C:\Users\Marius Cretu\Desktop\AdStore\AdStore\BussinessLogic\bin\Debug\netcoreapp2.1\DataAccess.dll
+C:\Users\Marius Cretu\Desktop\AdStore\AdStore\BussinessLogic\bin\Debug\netcoreapp2.1\Entities.dll
+C:\Users\Marius Cretu\Desktop\AdStore\AdStore\BussinessLogic\bin\Debug\netcoreapp2.1\DataAccess.pdb
+C:\Users\Marius Cretu\Desktop\AdStore\AdStore\BussinessLogic\bin\Debug\netcoreapp2.1\Entities.pdb
+C:\Users\Marius Cretu\Desktop\AdStore\AdStore\BussinessLogic\obj\Debug\netcoreapp2.1\BussinessLogic.csprojAssemblyReference.cache
+C:\Users\Marius Cretu\Desktop\AdStore\AdStore\BussinessLogic\obj\Debug\netcoreapp2.1\BussinessLogic.csproj.CoreCompileInputs.cache
+C:\Users\Marius Cretu\Desktop\AdStore\AdStore\BussinessLogic\obj\Debug\netcoreapp2.1\BussinessLogic.AssemblyInfoInputs.cache
+C:\Users\Marius Cretu\Desktop\AdStore\AdStore\BussinessLogic\obj\Debug\netcoreapp2.1\BussinessLogic.AssemblyInfo.cs
+C:\Users\Marius Cretu\Desktop\AdStore\AdStore\BussinessLogic\obj\Debug\netcoreapp2.1\BussinessLogic.csproj.CopyComplete
+C:\Users\Marius Cretu\Desktop\AdStore\AdStore\BussinessLogic\obj\Debug\netcoreapp2.1\BussinessLogic.dll
+C:\Users\Marius Cretu\Desktop\AdStore\AdStore\BussinessLogic\obj\Debug\netcoreapp2.1\BussinessLogic.pdb
