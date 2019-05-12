@@ -1,4 +1,5 @@
 ﻿using Entities.Enums;
+using System.Collections.Generic;
 
 namespace Entities.Entities
 {
@@ -11,5 +12,7 @@ namespace Entities.Entities
         public Roles Role { get; set; }
 
         public string Token { get; set; }
+
+        public ICollection<Post> Posts { get; set; }
     }
 }
