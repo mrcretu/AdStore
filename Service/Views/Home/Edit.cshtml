@@ -1,0 +1,11 @@
+﻿<h2>Edit Post</h2>
+
+<div>
+    @using (Html.BeginForm())
+    {
+        <p>Title @Html.TextBox("title", null, new { @class = "form-control" })</p>
+        <p>Description: @Html.TextBox("description", null, new { @class = "form-control" })</p>
+        <input type="submit" value="Edit" />
+    }
+</div>
+
