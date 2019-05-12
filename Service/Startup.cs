@@ -1,10 +1,12 @@
-﻿using DataAccess.Configurations;
+﻿using BussinessLogic.Configurations;
+using DataAccess.Configurations;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Swashbuckle.AspNetCore.Swagger;
 
 namespace Service
 {
@@ -27,12 +29,18 @@ namespace Service
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            // Register the Swagger generator, defining 1 or more Swagger documents
+            services.AddSwaggerGen(c => { c.SwaggerDoc("v1", new Info {Title = "AdStore API", Version = "v1"}); });
+
 
             services.
                 AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             services.
                 AddDataAccess(Configuration.GetConnectionString("DefaultConnection"));
+
+            services.
+                AddBusiness();
 
 
         }
@@ -49,10 +57,16 @@ namespace Service
                 app.UseExceptionHandler("/Home/Error");
                 app.UseHsts();
             }
-
+            
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
+
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+            });
 
             app.UseMvc(routes =>
             {

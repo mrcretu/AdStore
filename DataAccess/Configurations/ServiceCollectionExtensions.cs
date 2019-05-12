@@ -1,5 +1,4 @@
-﻿using DataAccess.Abstractions;
-using DataAccess.Repositories;
+﻿using DataAccess.Repositories;
 using Entities.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
