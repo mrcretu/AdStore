@@ -9,5 +9,7 @@ namespace Entities.Entities
         public string Password { get; set; }
 
         public Roles Role { get; set; }
+
+        public string Token { get; set; }
     }
 }
