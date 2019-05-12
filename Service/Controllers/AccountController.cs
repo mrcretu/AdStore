@@ -5,6 +5,9 @@ using Service.Models;
 
 namespace Service.Controllers
 {
+    [Authorize]
+    [ApiController]
+    [Route("[controller]")]
     public class AccountController : Controller
     {
         private readonly IUserLogic _userLogic;
@@ -23,9 +26,9 @@ namespace Service.Controllers
         [HttpPost]
         public IActionResult Authorize(User userDto)
         {
-            var user = _userLogic.Authenticate(userDto.Username, userDto.Password);
+//            var user = _userLogic.Authenticate(userDto.Username, userDto.Password);
 
-            if (user == null)
+            /*if (user == null)
             {
                 return BadRequest(new { message = "Username or password is incorrect." });
             }
@@ -38,7 +41,7 @@ namespace Service.Controllers
             if (user.Role == Entities.Enums.Roles.Administrator)
             {
                 return Json(new { status = true, message = "Logged as admin." });
-            }
+            }*/
 
             return Json(new { status = false, message = "Login failed." });
         }
