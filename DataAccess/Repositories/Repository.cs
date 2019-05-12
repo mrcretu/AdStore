@@ -10,10 +10,11 @@ namespace DataAccess.Repositories
     {
         private readonly ApplicationContext Context;
 
-        protected Repository(ApplicationContext context)
+        public Repository(ApplicationContext context)
         {
             Context = context ?? throw new ArgumentNullException();
         }
+
         public void Create(T entity)
         {
             Context.Set<T>().Add(entity);

@@ -7,9 +7,9 @@ using System.Linq.Expressions;
 
 namespace BussinessLogic.Implementations
 {
-    public class UserLogic : ILogic<User>
+    public class UserLogic : IUserLogic
     {
-        private IUserRepository _userRepository;
+        public IUserRepository _userRepository;
 
         public UserLogic(IUserRepository userRepository)
         {
