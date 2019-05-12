@@ -48,6 +48,7 @@ namespace BussinessLogic.Implementations
             };
             var token = tokenHandler.CreateToken(tokenDescriptor);
             user.Token = tokenHandler.WriteToken(token);
+            _userRepository.Update(user);
 
             return user;
         }
