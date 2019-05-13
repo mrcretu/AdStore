@@ -18,6 +18,10 @@ namespace Service.Controllers
         {
             _userLogic = userLogic;
         }
+        public ActionResult Login()
+        {
+            return View();
+        }
 
         [HttpPost]
         [Route("login")]    
@@ -26,7 +30,10 @@ namespace Service.Controllers
             var userToAuthenticate =
                 _userLogic.GetByFilter(u => u.Username == user.Username && u.Password == user.Password);
 
-            if (userToAuthenticate == null) return Unauthorized();
+            if (userToAuthenticate == null)
+            {
+                return Json(new { status = false, message = "Invalid credentials!" });
+            }
 
             var claims = new[]
             {
@@ -34,7 +41,7 @@ namespace Service.Controllers
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
             };
 
-            var signingKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("Secret"));
+            var signingKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("497239789f79dydfhjashu23hh4g32u4"));
 
             var token = new JwtSecurityToken(
                 issuer: "http://oec.com",
@@ -44,7 +51,8 @@ namespace Service.Controllers
                 signingCredentials: new SigningCredentials(signingKey, SecurityAlgorithms.HmacSha256)
             );
 
-            return Unauthorized();
+            
+            return Json(new { status = true, message = "Login Successfull!" });
         }
     }
 }

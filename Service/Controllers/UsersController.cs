@@ -1,9 +1,11 @@
 ﻿using BussinessLogic.Abstractions;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Service.Models;
 
 namespace Service.Controllers
 {
+    [Authorize]
     public class UsersController : Controller
     {
         private readonly IUserLogic _userLogic;

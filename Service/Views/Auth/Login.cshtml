@@ -68,32 +68,32 @@
   <script src="~/vendor/select2/select2.min.js"></script>
 <!--===============================================================================================-->
   <script src="~/js/main.js"></script>
+  
+<script>
+    function Validate() {
+        $.ajax(
+            {
+                type: "POST",
+                url: '@Url.Action("Login", "Auth")',
+                data: {
+                    Username: $('#username').val(),
+                    Password: $('#password').val()
+                },
+                error: function(result) {
+                    alert("There is a Problem, Try Again!");
+                },
+                success: function(result) {
+                    console.log(result);
+                    if (result.status == true) {
+                        window.location.href = '@Url.Action("Index", "Users")';
+                    }
+                    else {
+                        alert(result.message);
+                    }
+                }
+            });
+    }
+</script>
 
 </body>
-
-<script>
-  function Validate() {
-    $.ajax(
-    {
-      type: "POST",
-      url: '@Url.Action("Authorize", "Account")',
-      data: {
-        Username: $('#username').val(),
-        Password: $('#password').val()
-      },
-      error: function (result) {
-        alert("There is a Problem, Try Again!");
-      },
-      success: function (result) {
-        console.log(result);
-        if (result.status == true) {
-          window.location.href = '@Url.Action("Index", "Home")';
-        }
-        else {
-          alert(result.message);
-        }
-      }
-    });
-  }
-</script>
 </html>
