@@ -30,29 +30,88 @@ namespace Service.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create([Bind("Title","Description")]Post postModel)
+        public ActionResult Create(Models.Post newPost)
         {
-            var post = _postLogic.Add(new Post
+            if (ModelState.IsValid)
             {
-                Id = Guid.NewGuid(),
-                Title = postModel.Title,
-                Description = postModel.Description,
-                UserId = Guid.Parse("9C88ED87-4710-49F6-AA25-1CCEF965D5E7")
-            });
-            return View(post);
+                var post = new Entities.Entities.Post()
+                {
+                    Id = Guid.NewGuid(),
+                    Title = newPost.Title,
+                    Description = newPost.Description,
+                    UserId = Guid.Parse("B5BB4833-CAB9-4F1C-9EB5-38910C958BEA")
+                };
+
+                _postLogic.Add(post);
+
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return View(newPost);
+            }
         }
 
-        public ActionResult Edit()
+        public ActionResult Edit(Guid id)
         {
-            return View();
+            var post = _postLogic.GetByFilter(p => p.Id == id);
+            var postModel = new Models.Post()
+            {
+                Id = post.Id,
+                Title = post.Title,
+                Description = post.Description
+            };
+            return View(postModel);
         }
 
         [HttpPost]
-        public ActionResult Edit([Bind("Title", "Description")]Post postModel)
+        public ActionResult Edit(Models.Post updatedPost)
+        {
+            if (ModelState.IsValid)
+            {
+                var post = _postLogic.GetByFilter(p => p.Id == updatedPost.Id);
+                post.Title = updatedPost.Title;
+                post.Description = updatedPost.Description;
+
+                _postLogic.Update(post);
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return View(updatedPost);
+            }
+        }
+
+        public ActionResult Details(Guid id)
+        {
+            var post = _postLogic.GetByFilter(p => p.Id == id);
+            var postModel = new Models.Post()
+            {
+                Id = post.Id,
+                Title = post.Title,
+                Description = post.Description
+            };
+            return View(postModel);
+        }
+
+        public ActionResult Delete(Guid id)
+        {
+            var post = _postLogic.GetByFilter(p => p.Id == id);
+            var postModel = new Models.Post()
+            {
+                Id = post.Id,
+                Title = post.Title,
+                Description = post.Description
+            };
+            return View(postModel);
+        }
+
+        [HttpPost]
+        public ActionResult Delete(Models.Post postModel)
         {
             var post = _postLogic.GetByFilter(p => p.Id == postModel.Id);
-            _postLogic.Update(post);
-            return View(post);
+            _postLogic.Delete(post);
+            return RedirectToAction("Index");
         }
 
         public ActionResult About()

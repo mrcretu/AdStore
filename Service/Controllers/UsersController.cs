@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using BussinessLogic.Abstractions;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -9,10 +10,12 @@ namespace Service.Controllers
     public class UsersController : Controller
     {
         private readonly IUserLogic _userLogic;
+        private readonly IPostLogic _postLogic;
 
-        public UsersController(IUserLogic userLogic)
+        public UsersController(IUserLogic userLogic, IPostLogic postLogic)
         {
             _userLogic = userLogic;
+            _postLogic = postLogic;
         }
 
         // GET: Users
@@ -109,6 +112,11 @@ namespace Service.Controllers
         public ActionResult Delete(Models.User userModel)
         {
             var user = _userLogic.GetByFilter(u => u.Id == userModel.Id);
+            var userPosts = _postLogic.GetAll().Where(p => p.UserId == user.Id);
+            foreach (var post in userPosts)
+            {
+                _postLogic.Delete(post);
+            }
             _userLogic.Delete(user);
             return RedirectToAction("Index");
         }
