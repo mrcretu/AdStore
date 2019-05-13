@@ -42,6 +42,19 @@ namespace Service.Controllers
             return View(post);
         }
 
+        public ActionResult Edit()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Edit([Bind("Title", "Description")]Post postModel)
+        {
+            var post = _postLogic.GetByFilter(p => p.Id == postModel.Id);
+            _postLogic.Update(post);
+            return View(post);
+        }
+
         public ActionResult About()
         {
             return View();
