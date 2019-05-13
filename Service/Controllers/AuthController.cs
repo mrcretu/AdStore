@@ -25,7 +25,7 @@ namespace Service.Controllers
 
         [HttpPost]
         [Route("login")]    
-        public async Task<IActionResult> Login([FromBody] User user)
+        public async Task<IActionResult> Login(User user)
         {
             var userToAuthenticate =
                 _userLogic.GetByFilter(u => u.Username == user.Username && u.Password == user.Password);
@@ -51,6 +51,8 @@ namespace Service.Controllers
                 signingCredentials: new SigningCredentials(signingKey, SecurityAlgorithms.HmacSha256)
             );
 
+            userToAuthenticate.Token = token.ToString();
+            _userLogic.Update(userToAuthenticate);
             
             return Json(new { status = true, message = "Login Successfull!" });
         }

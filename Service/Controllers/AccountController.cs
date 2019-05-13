@@ -17,11 +17,6 @@ namespace Service.Controllers
             _userLogic = userLogic;
         }
 
-        public IActionResult Login()
-        {
-            return View();
-        }
-
         [AllowAnonymous]
         [HttpPost]
         public IActionResult Authorize(User userDto)
